@@ -17,8 +17,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (isExplicit && (saved === 'dark' || saved === 'light')) {
       return saved;
     }
-    // Default to clean, modern, minimal 'light' theme
-    return 'light';
+    // Default to premium, life-saving 'dark' theme
+    return 'dark';
   });
 
   useEffect(() => {

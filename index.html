@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -13,11 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
     <script>
       (function() {
+        var isExplicit = localStorage.getItem('bloodbridge-theme-explicit');
         var saved = localStorage.getItem('bloodbridge-theme');
-        if (saved === 'dark' || !saved) {
-          document.documentElement.classList.add('dark');
-        } else {
+        if (isExplicit && saved === 'light') {
           document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
         }
       })();
     </script>

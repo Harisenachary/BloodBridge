@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodBridge — Verified Blood Requirement &amp; Donor Coordination Platform</title>
+    <meta name="description" content="Every Second Matters. Every Connection Counts. BloodBridge connects blood requesters, voluntary donors, hospitals, and blood banks with verified privacy-first coordination." />
+    
+    <!-- Google Fonts: Manrope (Headings) and Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        var saved = localStorage.getItem('bloodbridge-theme');
+        if (saved === 'dark' || !saved) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="bg-[#F8FAFC] dark:bg-[#080D1A] text-charcoal-900 dark:text-slate-100 font-sans antialiased min-h-screen selection:bg-rose-500 selection:text-white transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

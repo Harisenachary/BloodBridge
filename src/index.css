@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #F8FAFC;
+    --surface: #FFFFFF;
+    --text-primary: #0F172A;
+    --text-muted: #64748B;
+    --brand-rose: #F43F5E;
+    --brand-red: #E11D48;
+    --brand-crimson: #BE123C;
+    --brand-burgundy: #881337;
+    --border-color: #E2E8F0;
+  }
+
+  .dark {
+    --bg-primary: #050811;
+    --surface: #0D1322;
+    --text-primary: #F8FAFC;
+    --text-muted: #94A3B8;
+    --border-color: #1F2942;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    background-image: 
+      radial-gradient(at 50% 0%, rgba(244, 63, 94, 0.035) 0px, transparent 60%),
+      radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.12) 1px, transparent 0);
+    background-size: 100% 100%, 28px 28px;
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .dark body {
+    background-color: #050811;
+    background-image: 
+      radial-gradient(at 20% 0%, rgba(255, 0, 85, 0.22) 0px, transparent 50%),
+      radial-gradient(at 80% 15%, rgba(99, 102, 241, 0.18) 0px, transparent 45%),
+      radial-gradient(at 50% 90%, rgba(255, 23, 68, 0.15) 0px, transparent 60%),
+      radial-gradient(at 0% 80%, rgba(6, 182, 212, 0.14) 0px, transparent 50%);
+    background-size: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom Healthcare UI Utilities with Minimal, High-Performance Styling */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-bold rounded-xl px-5 py-2.5 transition-all duration-200 bg-gradient-to-r from-rose-600 via-rose-500 to-pink-600 text-white hover:brightness-105 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-rose-500/40 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_2px_12px_rgba(225,29,72,0.22)] hover:shadow-[0_4px_20px_rgba(225,29,72,0.32)] hover:scale-[1.01];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center font-semibold rounded-xl px-5 py-2.5 transition-all duration-200 bg-white dark:bg-slate-900/90 text-slate-800 dark:text-slate-100 border border-slate-200/90 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/90 hover:border-slate-300 dark:hover:border-slate-700 hover:text-rose-600 dark:hover:text-rose-400 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-slate-300/40 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_3px_10px_rgba(0,0,0,0.05)];
+  }
+
+  .btn-outline-danger {
+    @apply inline-flex items-center justify-center font-semibold rounded-xl px-4 py-2 transition-all duration-200 bg-white dark:bg-slate-900/90 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800 hover:bg-rose-50/70 dark:hover:bg-rose-950/50 hover:border-rose-400 focus:outline-none focus:ring-2 focus:ring-rose-500/20 shadow-xs;
+  }
+
+  .badge-verified {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-300/50 dark:border-emerald-500/50 shadow-xs;
+  }
+
+  .badge-emergency {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-300/60 dark:border-rose-500/60 animate-pulse shadow-xs;
+  }
+
+  .badge-pending {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-300/50 dark:border-amber-500/50 shadow-xs;
+  }
+
+  .card-surface {
+    @apply bg-white dark:bg-slate-900/90 backdrop-blur-xl rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-[0_2px_12px_rgba(15,23,42,0.03)] dark:shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_24px_rgba(15,23,42,0.06)] hover:border-slate-300 dark:hover:border-rose-700/80 transition-all duration-300 p-6;
+  }
+
+  .card-glass {
+    @apply bg-white/90 dark:bg-slate-900/70 backdrop-blur-xl rounded-2xl border border-slate-200/70 dark:border-slate-800 shadow-[0_4px_20px_rgba(0,0,0,0.03)] dark:shadow-glass-dark;
+  }
+
+  .form-input {
+    @apply w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/90 px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-rose-500 focus:outline-none focus:ring-2 focus:ring-rose-500/20 transition-all shadow-xs;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-rose-600 via-rose-500 to-pink-500 bg-clip-text text-transparent font-black;
+  }
+
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(135deg, rgba(244, 63, 94, 0.4), rgba(251, 146, 60, 0.3), rgba(99, 102, 241, 0.4));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+/* Float Up-Down Micro-Animation */
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-float-up-down {
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+/* Radar pulse animation */
+@keyframes radarPing {
+  0% { transform: scale(0.6); opacity: 0.95; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.animate-radar-ping {
+  animation: radarPing 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Subtle sleek scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF2E63;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #FF0055;
+}
+
+/* Dark Mode High-Contrast Typography & Surface Fixes */
+.dark .text-charcoal-900 {
+  color: #F8FAFC !important;
+}
+.dark .text-charcoal-800 {
+  color: #E2E8F0 !important;
+}
+.dark .text-charcoal-700 {
+  color: #CBD5E1 !important;
+}
+.dark .text-charcoal-600 {
+  color: #94A3B8 !important;
+}
+.dark .text-slate-muted {
+  color: #94A3B8 !important;
+}
+.dark .text-slate-800 {
+  color: #E2E8F0 !important;
+}
+.dark .text-slate-700 {
+  color: #CBD5E1 !important;
+}
+.dark .text-slate-600 {
+  color: #94A3B8 !important;
+}
+.dark .text-amber-800 {
+  color: #FBBF24 !important;
+}
+.dark .text-amber-900 {
+  color: #FDE68A !important;
+}
+.dark .text-amber-950 {
+  color: #FEF3C7 !important;
+}
+.dark .text-emerald-800 {
+  color: #6EE7B7 !important;
+}
+.dark .text-brand-burgundy {
+  color: #FDA4AF !important;
+}
+.dark .bg-surface {
+  background-color: #0F172A !important;
+}
+.dark .bg-surface-subtle {
+  background-color: #1E293B !important;
+}
+.dark .border-slate-border {
+  border-color: #334155 !important;
+}
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #334155 !important;
+}
+.dark .bg-red-50 {
+  background-color: rgba(159, 18, 57, 0.25) !important;
+  color: #FDA4AF !important;
+  border-color: rgba(244, 63, 94, 0.3) !important;
+}
+.dark .bg-amber-50 {
+  background-color: rgba(120, 53, 15, 0.25) !important;
+  border-color: rgba(245, 158, 11, 0.3) !important;
+}
+.dark .bg-emerald-50 {
+  background-color: rgba(6, 78, 59, 0.25) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+.dark .bg-slate-100 {
+  background-color: #1E293B !important;
+  color: #E2E8F0 !important;
+}
+
+/* Print styles for verification slips and request records */
+@media print {
+  nav, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+}
+

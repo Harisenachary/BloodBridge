@@ -1,0 +1,125 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: 'class',
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: '#FAF9F6',
+        surface: '#FFFFFF',
+        'surface-subtle': '#F8F9FA',
+        'surface-hover': '#F1F3F5',
+        dark: {
+          bg: '#050811',
+          card: '#0D1322',
+          surface: '#151C30',
+          border: '#1F2942',
+          muted: '#94A3B8',
+        },
+        vibrant: {
+          crimson: '#FF0055',
+          ruby: '#E11D48',
+          coral: '#FF3366',
+          neon: '#FF1744',
+          amber: '#FF9100',
+          emerald: '#00E676',
+          cyan: '#00E5FF',
+          violet: '#7C3AED',
+          indigo: '#6366F1',
+          blue: '#2979FF',
+        },
+        charcoal: {
+          950: '#0F172A',
+          900: '#111827',
+          800: '#1F2937',
+          700: '#374151',
+          600: '#4B5563',
+        },
+        slate: {
+          muted: '#64748B',
+          soft: '#94A3B8',
+          border: '#E2E8F0',
+          subtle: '#F1F5F9',
+        },
+        brand: {
+          rose: '#F43F5E',
+          red: '#E11D48',
+          crimson: '#BE123C',
+          burgundy: '#881337',
+          deep: '#4C0519',
+          hover: '#9F1239',
+          light: '#FFE4E6',
+          subtle: '#FFF1F2',
+          gradient: 'linear-gradient(135deg, #F43F5E 0%, #E11D48 50%, #9F1239 100%)',
+        },
+        medical: {
+          green: '#10B981',
+          'green-light': '#D1FAE5',
+          'green-border': '#A7F3D0',
+          amber: '#F59E0B',
+          'amber-light': '#FEF3C7',
+          'amber-border': '#FDE68A',
+          blue: '#2563EB',
+          'blue-light': '#DBEAFE',
+          'blue-border': '#BFDBFE',
+          purple: '#8B5CF6',
+          'purple-light': '#EDE9FE',
+        }
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Manrope', 'system-ui', 'sans-serif'],
+      },
+      maxWidth: {
+        container: '1360px',
+      },
+      borderRadius: {
+        'card': '16px',
+        'subtle': '12px',
+        'pill': '9999px',
+      },
+      boxShadow: {
+        'xs': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        'subtle': '0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px -1px rgba(0, 0, 0, 0.03)',
+        'card': '0 4px 16px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -2px rgba(15, 23, 42, 0.02)',
+        'elevated': '0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03)',
+        'glow-brand': '0 0 24px -2px rgba(225, 29, 72, 0.25)',
+        'glow-emerald': '0 0 20px -2px rgba(16, 185, 129, 0.25)',
+        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.05)',
+        'glass-dark': '0 8px 32px 0 rgba(0, 0, 0, 0.4)',
+        'neon-red': '0 0 20px rgba(225, 29, 72, 0.6), 0 0 40px rgba(225, 29, 72, 0.3)',
+      },
+      animation: {
+        'radar': 'radarSweep 4s linear infinite',
+        'float-slow': 'floatGentle 6s ease-in-out infinite',
+        'pulse-slow': 'pulseGlow 3s ease-in-out infinite',
+        'heartbeat': 'heartbeatAnim 1.4s ease-in-out infinite',
+      },
+      keyframes: {
+        radarSweep: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        floatGentle: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
+        },
+        pulseGlow: {
+          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+          '50%': { opacity: '0.9', transform: 'scale(1.05)' },
+        },
+        heartbeatAnim: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '14%': { transform: 'scale(1.15)' },
+          '28%': { transform: 'scale(1)' },
+          '42%': { transform: 'scale(1.1)' },
+          '70%': { transform: 'scale(1)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+}
